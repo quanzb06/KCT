@@ -1,6 +1,6 @@
 # Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis
 
-This repository provides the source code and dataset for the paper *"Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis"*.
+This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis"*.
 
 ---
 
@@ -19,7 +19,7 @@ To address these issues, we propose the **Natural Language Processing Knowledge 
 
 ---
 
-## Knowledge Contribution Framework
+## Knowledge Contribution Taxonomy 
 
 Our classification framework (ACL-KCT) moves beyond subjective citation intent to focus on the objective, verifiable knowledge contribution of a cited paper. We define four categories, including three **Core Knowledge Contributions** and one **Non-core** contribution.
 
