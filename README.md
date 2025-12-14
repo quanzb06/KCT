@@ -171,6 +171,10 @@ cd ablation/
 python run_ablation_experiments.py
 ```
 
+## Acknowledgments
+
+We extend our sincere gratitude to all collaborators who contributed to this project. From data collection and preprocessing to the meticulous annotation of 2,000 citation instances, their dedication and effort were indispensable. The painstaking work of our annotators in carefully labeling each citation context forms the foundation upon which this research is built. We also thank all team members who participated in the experimental design and evaluation process. This work would not have been possible without their invaluable contributions.
+
 ---
 
 ## Citation
