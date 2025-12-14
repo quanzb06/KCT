@@ -54,25 +54,6 @@ A 2,000-instance gold standard set was manually annotated to train and validate 
 
 ---
 
-## ACLKC Dataset Analysis (Full 802,202 Instances)
-
-### Full Dataset Distribution
-
-The full dataset provides a macro-level view of the NLP field, composed of **39.09% Core Contributions** (Method, Resource, Finding) and **60.91% Non-core Contributions** (Background).
-
-<p align="center">
-  <img width="5727" height="2982" alt="Figure 3: Dataset Distribution" src="https://github.com/user-attachments/assets/1f3e96c6-1312-4d8e-b8d8-7f99da70de35" />
-  <br>
-  <em>Figure 3: Distribution Characteristics and Statistical Properties of the ACLKC Dataset</em>
-</p>
-
-* **Class Distribution (Fig. 3a/c):** `Background` (60.91%) is the largest class, followed by `Method` (17.66%), `Evidential Finding` (14.75%), and `Resource Tool` (6.68%).
-* **Citation Frequency (Fig. 3b):** Core contributions (`Method`, `Evidential Finding`) are significantly more prevalent in high-frequency citations (>10), while `Background` dominates low-frequency citations (1-2).
-* **Section (Fig. 3d):** `Background` contributions are concentrated in the *Introduction* (77.42%) and *Related Work* (87.12%) sections.
-
-
----
-
 ## Data Schema (ACLKC-Dataset.csv)
 
 The CSV file contains 19 columns. Here is a detailed breakdown using a single example (ID 446292) for illustration.
