@@ -44,9 +44,6 @@ Our classification framework (NLP-KCT) moves beyond subjective citation intent t
 │   └── comparison_results.jsonl
 ├── LLM_EXP/
 │   └── llm_validation_standalone.py # LLM inference experiments (GPT-4o, Claude-3.5, Llama-3, etc.)
-├── ablation/
-│   ├── run_ablation_experiments.py  # Ablation studies
-│   └── ablation_results_raw.csv
 └── README.md
 ```
 
@@ -164,12 +161,6 @@ python llm_validation_standalone.py \
 | `--fewshot-file` | Path to few-shot examples file (required when `--mode few`) |
 | `--limit` | Limit number of samples for quick testing |
 | `--output` | Output directory for predictions and metrics |
-
-### Run Ablation Studies
-```bash
-cd ablation/
-python run_ablation_experiments.py
-```
 
 ## Acknowledgments
 
