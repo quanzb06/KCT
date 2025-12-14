@@ -33,11 +33,20 @@ Our classification framework (NLP-KCT) moves beyond subjective citation intent t
 
 ## Repository Structure
 ```
-├── data/                    # Manually annotated dataset (2,000 instances)
-├── scibert+hybrid.py        # Main model: Dual-path hybrid fusion (SciBERT + feature fusion)
-├── comparison_EXP/          # Baseline comparison experiments (SVM, XGBoost, BERT, etc.)
-├── LLM_EXP/                  # LLM inference experiments (GPT-4o, Claude-3.5, Llama-3, etc.)
-├── ablation/                # Ablation studies
+├── data/
+│   ├── train_split.csv              # Training set
+│   ├── val_split.csv                # Validation set
+│   └── test_split.csv               # Test set
+├── scibert+hybrid.py                # Main model: Dual-path hybrid fusion (SciBERT + feature fusion)
+├── comparison_EXP/
+│   ├── run_comparisons.py           # Baseline comparison experiments
+│   ├── comparison_results_summary.csv
+│   └── comparison_results.jsonl
+├── LLM_EXP/
+│   └── llm_validation_standalone.py # LLM inference experiments (GPT-4o, Claude-3.5, Llama-3, etc.)
+├── ablation/
+│   ├── run_ablation_experiments.py  # Ablation studies
+│   └── ablation_results_raw.csv
 └── README.md
 ```
 
@@ -45,24 +54,26 @@ Our classification framework (NLP-KCT) moves beyond subjective citation intent t
 
 ## Dataset
 
-### Released Dataset: Gold Standard (2,000 Instances)
+### Data Source: ACL Anthology (802,202 Instances)
 
-We release a **manually annotated gold standard dataset of 2,000 citation instances** for model training, evaluation, and reproduction. The annotation quality was rigorously assessed, achieving an **Average Cohen's Kappa of 0.770** and a **Fleiss' Kappa of 0.770** (Fig. 2a, 2b), indicating "excellent" inter-annotator agreement. The distribution of this gold set is shown in Fig. 2c and 2d.
-
-<p align="center">
-  <img width="1958" height="588" alt="Figure 2: Annotation Quality" src="https://github.com/user-attachments/assets/2d4ce66d-007f-4015-b56d-1280e79bc050" />
-  <br>
-  <em>Figure 1: Annotation quality assessment and distribution of the 2,000-sample gold standard set</em>
-</p>
-
-### Full-Scale Analysis: ACL Anthology (802,202 Instances)
-
-The paper analyzes **802,202 citation instances** from the ACL Anthology (1980–2024) using models trained on the above gold standard dataset. Figure 2 shows the statistical features: exponential growth in publications (Fig. 2a), high concentration of citations in the *Introduction* (44.0%) and *Related Work* (34.3%) sections (Fig. 2b), and a normal distribution of context length (Mean: 434 chars) (Fig. 2c).
+We collected and preprocessed **802,202 citation instances** from the ACL Anthology, spanning 45 years of NLP research (1980–2024). Figure 1 shows the statistical features: exponential growth in publications (Fig. 1a), high concentration of citations in the *Introduction* (44.0%) and *Related Work* (34.3%) sections (Fig. 1b), and a normal distribution of context length (Mean: 434 chars) (Fig. 1c).
 
 <p align="center">
   <img width="2199" height="792" alt="Figure 1: Data Statistics" src="https://github.com/user-attachments/assets/003b1f19-46c3-4bc7-960e-3f9b71f0fef1" />
   <br>
-  <em>Figure 2: Detailed statistics of the ACL Anthology data (1980-2024)</em>
+  <em>Figure 1: Detailed statistics of the ACL Anthology data (1980-2024)</em>
+</p>
+
+### Released Dataset: Gold Standard (2,000 Instances)
+
+From the above 802,202 instances, we performed **stratified sampling** to obtain **2,000 citation instances** for manual annotation. This gold standard dataset is released for model training, evaluation, and reproduction.
+
+The annotation quality was rigorously assessed, achieving an **Average Cohen's Kappa of 0.770** and a **Fleiss' Kappa of 0.770** (Fig. 2a, 2b), indicating "excellent" inter-annotator agreement. The distribution of this gold set is shown in Fig. 2c and 2d.
+
+<p align="center">
+  <img width="1958" height="588" alt="Figure 2: Annotation Quality" src="https://github.com/user-attachments/assets/2d4ce66d-007f-4015-b56d-1280e79bc050" />
+  <br>
+  <em>Figure 2: Annotation quality assessment and distribution of the 2,000-sample gold standard set</em>
 </p>
 
 ---
@@ -99,7 +110,7 @@ The CSV file contains 19 columns. Here is a detailed breakdown using a single ex
 
 ### Environment Setup
 ```bash
-pip install torch transformers scikit-learn pandas numpy
+pip install torch transformers scikit-learn pandas numpy requests tqdm
 ```
 
 ### Train Main Model
@@ -107,15 +118,57 @@ pip install torch transformers scikit-learn pandas numpy
 python scibert+hybrid.py
 ```
 
-### Run Comparison Experiments
+### Run Baseline Comparisons
 ```bash
-# Traditional ML baselines
 cd comparison_EXP/
-python run_baselines.py
+python run_comparisons.py
+```
 
-# LLM inference experiments
+### Run LLM Experiments
+
+The `llm_validation_standalone.py` script supports both zero-shot and few-shot evaluation with any OpenAI-compatible API.
+
+**Zero-shot evaluation:**
+```bash
 cd LLM_EXP/
-python run_llm_inference.py
+python llm_validation_standalone.py \
+    --dataset ../data/test_split.csv \
+    --base-url https://api.openai.com/v1/chat/completions \
+    --model-id gpt-4o \
+    --api-key-env OPENAI_API_KEY \
+    --mode zero \
+    --output ./outputs
+```
+
+**Few-shot evaluation:**
+```bash
+python llm_validation_standalone.py \
+    --dataset ../data/test_split.csv \
+    --base-url https://api.openai.com/v1/chat/completions \
+    --model-id gpt-4o \
+    --api-key-env OPENAI_API_KEY \
+    --mode few \
+    --fewshot-file ./fewshot_examples.txt \
+    --output ./outputs
+```
+
+**Key arguments:**
+
+| Argument | Description |
+| :--- | :--- |
+| `--dataset` | Path to input CSV (requires columns: `id`, `KC`, `citation_section`, `citation_context`) |
+| `--base-url` | API endpoint (OpenAI-compatible) |
+| `--model-id` | Model identifier (e.g., `gpt-4o`, `claude-3-5-sonnet`, `llama-3-70b`) |
+| `--api-key-env` | Environment variable name containing the API key |
+| `--mode` | `zero` for zero-shot, `few` for few-shot |
+| `--fewshot-file` | Path to few-shot examples file (required when `--mode few`) |
+| `--limit` | Limit number of samples for quick testing |
+| `--output` | Output directory for predictions and metrics |
+
+### Run Ablation Studies
+```bash
+cd ablation/
+python run_ablation_experiments.py
 ```
 
 ---
