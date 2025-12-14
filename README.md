@@ -80,8 +80,32 @@ The CSV file contains 19 columns. Here is a detailed breakdown using a single ex
 | `period` | The pre-defined technological era of the citation. | `Period4_2017-2020` |
 | `KC` | The Knowledge Contribution label (1=Method, 2=Resource, 3=Finding, 4=Background). | `1` |
 
----
 
+---
+## Quick Start
+
+### Environment Setup
+```bash
+pip install torch transformers scikit-learn pandas numpy
+```
+
+### Train Main Model
+```bash
+python scibert+hybrid.py
+```
+
+### Run Comparison Experiments
+```bash
+# Traditional ML baselines
+cd comparison_EXP/
+python run_baselines.py
+
+# LLM inference experiments
+cd LLM_EXP/
+python run_llm_inference.py
+```
+
+---
 ## How to Cite
 
 If you use this dataset in your research, please cite our paper:
