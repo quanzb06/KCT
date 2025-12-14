@@ -1,14 +1,21 @@
-# ACLKC-Dataset: A Large-Scale Dataset for Citation Knowledge Contribution
+# Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis
 
-This repository hosts the **ACLKC-Dataset**, the largest and most comprehensive dataset for Knowledge Contribution Classification in the field of Computational Linguistics.
+This repository provides the source code and dataset for the paper *"Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis"*.
 
-The dataset includes **802,202** citation contexts systematically collected from the ACL Anthology, covering **45 years** of research (1980-2024). Each instance is automatically classified into one of four distinct knowledge contribution types.
+---
 
-## 🚀 Download the Dataset
+## Overview
 
-The complete dataset (802,202 instances) is available as a single compressed ZIP file (`ACLKC-Dataset.zip`, 330.5 MB) on our **Releases page**.
+Understanding scientific knowledge flow and evolution is essential for assessing research impact and tracing disciplinary development. However, existing citation analysis methods focus on subjective citation intent, conflating heterogeneous knowledge types. Moreover, most studies analyze isolated contribution statements rather than actual citation contexts, yielding results disconnected from real knowledge dissemination scenarios.
 
-**[➡️ Click here to download the latest version (v1.0)](https://github.com/quanzb06/ACLKC-Dataset/releases/latest)**
+To address these issues, we propose the **Natural Language Processing Knowledge Contribution Taxonomy (NLP-KCT)**. This framework identifies objective knowledge contribution types of cited works across four categories: **Method**, **Resource Tool**, **Empirical Findings**, and **Background**. By distinguishing core from non-core contributions, it reveals the hierarchical structure of knowledge dissemination.
+
+**Key Results:**
+- Dual-path hybrid fusion model achieves **85.5%** classification accuracy, outperforming general-purpose reasoning LLMs
+- Analysis of **802,202** citations from ACL Anthology (1980–2024) reveals only 42.9% constitute core knowledge contribution edges
+- Reconstructed citation networks render knowledge flow patterns more discernible
+- Evolutionary analysis demonstrates that traditional methods gradually recede into disciplinary background while paradigm innovations achieve enduring influence by becoming reusable tools
+
 
 ---
 
@@ -63,19 +70,6 @@ The full dataset provides a macro-level view of the NLP field, composed of **39.
 * **Citation Frequency (Fig. 3b):** Core contributions (`Method`, `Evidential Finding`) are significantly more prevalent in high-frequency citations (>10), while `Background` dominates low-frequency citations (1-2).
 * **Section (Fig. 3d):** `Background` contributions are concentrated in the *Introduction* (77.42%) and *Related Work* (87.12%) sections.
 
-### Temporal Evolution and Dynamics
-
-The dataset reveals clear trends in how NLP research has evolved over 45 years.
-
-<p align="center">
-  <img width="5913" height="3445" alt="Figure 4: Temporal Dynamics" src="https://github.com/user-attachments/assets/2982147a-63d3-4663-9280-a9c80fe1a9fc" />
-  <br>
-  <em>Figure 4: Temporal Evolution and Citation Dynamics in the ACLKC Dataset</em>
-</p>
-
-* **Contribution Share (Fig. 4a):** The share of `Resource Tool` contributions has steadily grown from <1% in the 1980s to over 8.5% by 2024, highlighting the shift towards a data-driven, resource-intensive paradigm.
-* **Citation Lag (Fig. 4c):** `Evidential Finding` citations are the most time-sensitive, with 50% occurring within 2 years of publication. `Method` and `Resource Tool` contributions show a longer citation lag, indicating their enduring value as part of the field's technical infrastructure.
-* **Core vs. Non-core (Fig. 4d):** The growth of both core and non-core contributions has accelerated, with core contributions showing a particularly sharp increase in the pre-training and LLM eras.
 
 ---
 
