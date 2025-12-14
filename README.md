@@ -106,16 +106,22 @@ python run_llm_inference.py
 ```
 
 ---
-## How to Cite
 
-If you use this dataset in your research, please cite our paper:
+## Citation
 
+If you use this dataset or code in your research, please cite our paper:
 ```bibtex
-@inproceedings{Zhibang Quan-2025-ACLKC,
-    title = "{}",
-    author = "{Zhibang Quan, Jin Mao, Gang Li, Zhentao Liang, Jinyu Wei, Jie Sun}",
-    booktitle = "{}",
-    year = "2025",
-    address = "...",
-    publisher = "..."
+@article{quan2025knowledge,
+    title = {Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis},
+    author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Jinyu Wei and Jie Sun},
+    journal = {...},
+    year = {2025},
+    publisher = {...}
 }
+```
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
