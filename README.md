@@ -177,7 +177,7 @@ python llm_validation_standalone.py \
 | :--- | :--- |
 | `--dataset` | Path to input CSV (requires columns: `id`, `KC`, `citation_section`, `citation_context`) |
 | `--base-url` | API endpoint (OpenAI-compatible) |
-| `--model-id` | Model identifier (e.g., `gpt-4o`, `claude-3-5-sonnet`, `llama-3-70b`) |
+| `--model-id` | Model identifier (e.g., `gptmini-5.1`, `claude-4.5-sonnet`, `gemini-2.5`) |
 | `--api-key-env` | Environment variable name containing the API key |
 | `--mode` | `zero` for zero-shot, `few` for few-shot |
 | `--fewshot-file` | Path to few-shot examples file (required when `--mode few`) |
