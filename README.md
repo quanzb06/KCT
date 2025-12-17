@@ -51,7 +51,7 @@ Our classification framework (NLP-KCT) moves beyond subjective citation intent t
 
 ## Dataset
 
-### Data Source: ACL Anthology (802,202 Instances)
+### 🗃️ Data Source: ACL Anthology (802,202 Instances)
 
 We collected and preprocessed **802,202 citation instances** from the ACL Anthology, spanning 45 years of NLP research (1980–2024). Figure 1 shows the statistical features: exponential growth in publications (Fig. 1a), high concentration of citations in the *Introduction* (44.0%) and *Related Work* (34.3%) sections (Fig. 1b), and a normal distribution of context length (Mean: 434 chars) (Fig. 1c).
 
@@ -61,7 +61,7 @@ We collected and preprocessed **802,202 citation instances** from the ACL Anthol
   <em>Figure 1: Detailed statistics of the ACL Anthology data (1980-2024)</em>
 </p>
 
-### Released Dataset: Gold Standard (2,000 Instances)
+### 🏆Released Dataset: Gold Standard (2,000 Instances)
 
 From the above 802,202 instances, we performed **stratified sampling** to obtain **2,000 citation instances** for manual annotation. This gold standard dataset is released for model training, evaluation, and reproduction.
 
@@ -75,7 +75,7 @@ The annotation quality was rigorously assessed, achieving an **Average Cohen's K
 
 ---
 
-## Data Schema
+## 📋 Data Schema
 
 The CSV file contains 19 columns. Here is a detailed breakdown using a single example (ID 446292) for illustration.
 
@@ -103,25 +103,25 @@ The CSV file contains 19 columns. Here is a detailed breakdown using a single ex
 
 ---
 
-## Quick Start
+## 🚀Quick Start
 
-### Environment Setup
+### ⚙️ Environment Setup
 ```bash
 pip install torch transformers scikit-learn pandas numpy requests tqdm
 ```
 
-### Train Main Model
+### 🏋️ Train Main Model
 ```bash
 python scibert+hybrid.py
 ```
 
-### Run Baseline Comparisons
+### 📊Run Baseline Comparisons
 ```bash
 cd comparison_EXP/
 python run_comparisons.py
 ```
 
-### Run LLM Experiments
+### 🤖Run LLM Experiments
 
 The `llm_validation_standalone.py` script supports both zero-shot and few-shot evaluation with any OpenAI-compatible API.
 
@@ -137,7 +137,7 @@ python llm_validation_standalone.py \
     --output ./outputs
 ```
 
-**Few-shot evaluation:**
+**📝Few-shot evaluation:**
 ```bash
 python llm_validation_standalone.py \
     --dataset ../data/test_split.csv \
@@ -162,13 +162,13 @@ python llm_validation_standalone.py \
 | `--limit` | Limit number of samples for quick testing |
 | `--output` | Output directory for predictions and metrics |
 
-## Acknowledgments
+##🙏 Acknowledgments
 
 We extend our sincere gratitude to all collaborators who contributed to this project. From data collection and preprocessing to the meticulous annotation of 2,000 citation instances, their dedication and effort were indispensable. The painstaking work of our annotators in carefully labeling each citation context forms the foundation upon which this research is built. We also thank all team members who participated in the experimental design and evaluation process. This work would not have been possible without their invaluable contributions.
 
 ---
 
-## Citation
+## 📝Citation
 
 If you use this dataset or code in your research, please cite our paper:
 ```bibtex
