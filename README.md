@@ -1,4 +1,4 @@
-# Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis
+# Knowledge Contribution Classification in Citation Contexts: A 45-Year Empirical Study of NLP Literature
 
 <p align="center">
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
@@ -21,7 +21,7 @@
 
 ---
 
-This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis"*.
+This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"Knowledge Contribution Classification in Citation Contexts: A 45-Year Empirical Study of NLP Literature"*.
 
 ---
 
@@ -206,8 +206,8 @@ If you use this dataset or code in your research, please cite our paper:
 
 ```bibtex
 @article{quan2025knowledge,
-    title = {Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis},
-    author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Jinyu Wei and Jie Sun},
+    title = {Knowledge Contribution Classification in Citation Contexts: A 45-Year Empirical Study of NLP Literature},
+    author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Ming Ma and Jinyu Wei and Jie Sun},
     journal = {...},
     year = {2025},
     publisher = {...}
