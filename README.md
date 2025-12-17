@@ -1,5 +1,21 @@
 # Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis
-
+<p align="center">
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.8+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg?logo=pytorch&logoColor=white" alt="PyTorch"></a>
+  <a href="https://huggingface.co/transformers/"><img src="https://img.shields.io/badge/🤗_Transformers-4.0+-yellow.svg" alt="Transformers"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Dataset-2,000_Instances-orange.svg?logo=databricks&logoColor=white" alt="Dataset">
+  <img src="https://img.shields.io/badge/Full_Data-802,202_Citations-purple.svg" alt="Full Data">
+  <img src="https://img.shields.io/badge/Accuracy-85.5%25-brightgreen.svg" alt="Accuracy">
+  <img src="https://img.shields.io/badge/Cohen's_κ-0.770-blue.svg" alt="Kappa">
+</p>
+<p align="center">
+  <a href="#dataset"><img src="https://img.shields.io/badge/📊_Dataset-Released-success.svg" alt="Dataset Released"></a>
+  <a href="#quick-start"><img src="https://img.shields.io/badge/🚀_Quick_Start-Guide-blue.svg" alt="Quick Start"></a>
+  <a href="#citation"><img src="https://img.shields.io/badge/📝_Paper-Coming_Soon-lightgrey.svg" alt="Paper"></a>
+</p>
 This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis"*.
 
 ---
