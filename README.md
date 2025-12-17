@@ -9,7 +9,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Dataset-2,000_Instances-orange.svg?logo=databricks&logoColor=white" alt="Dataset">
-  <img src="https://img.shields.io/badge/Full_Data-802,202_Citations-purple.svg" alt="Full Data">
   <img src="https://img.shields.io/badge/Accuracy-85.5%25-brightgreen.svg" alt="Accuracy">
   <img src="https://img.shields.io/badge/Cohen's_κ-0.770-blue.svg" alt="Kappa">
 </p>
