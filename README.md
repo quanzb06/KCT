@@ -147,9 +147,7 @@ python run_comparisons.py
 
 The `llm_validation_standalone.py` script supports both zero-shot and few-shot evaluation with any OpenAI-compatible API.
 
-<details>
-<summary>📝 Zero-shot evaluation</summary>
-
+**📝 Zero-shot evaluation**
 ```bash
 cd LLM_EXP/
 python llm_validation_standalone.py \
@@ -161,11 +159,7 @@ python llm_validation_standalone.py \
     --output ./outputs
 ```
 
-</details>
-
-<details>
-<summary>📝 Few-shot evaluation</summary>
-
+**📝 Few-shot evaluation**
 ```bash
 python llm_validation_standalone.py \
     --dataset ../data/test_split.csv \
@@ -176,8 +170,6 @@ python llm_validation_standalone.py \
     --fewshot-file ./fewshot_examples.txt \
     --output ./outputs
 ```
-
-</details>
 
 **Key arguments:**
 
