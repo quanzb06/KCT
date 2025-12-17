@@ -1,7 +1,7 @@
 # Knowledge Contribution Classification in Citation Contexts: Framework and 45-Year NLP Analysis
 
 <p align="center">
-  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.8+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg?logo=pytorch&logoColor=white" alt="PyTorch"></a>
   <a href="https://huggingface.co/transformers/"><img src="https://img.shields.io/badge/🤗_Transformers-4.0+-yellow.svg" alt="Transformers"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
