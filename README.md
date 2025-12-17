@@ -31,17 +31,6 @@ Understanding scientific knowledge flow and evolution is essential for assessing
 
 To address these issues, we propose the **Knowledge Contribution Taxonomy (NLP-KCT)**. This framework identifies objective knowledge contribution types of cited works across four categories: **Method**, **Resource Tool**, **Empirical Findings**, and **Background**. By distinguishing core from non-core contributions, it reveals the hierarchical structure of knowledge dissemination.
 
-### ✨ Key Results
-
-| Metric | Value |
-| :--- | :---: |
-| 🎯 Classification Accuracy | **85.5%** |
-| 📚 Total Citations Analyzed | **802,202** |
-| 🔗 Core Knowledge Edges | **42.9%** |
-| 📅 Time Span | **1980–2024** |
-
-> 💡 Our dual-path hybrid fusion model outperforms general-purpose reasoning LLMs. Reconstructed citation networks render knowledge flow patterns more discernible.
-
 ---
 
 ## 🏷️ Knowledge Contribution Taxonomy (NLP-KCT)
