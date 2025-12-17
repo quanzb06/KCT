@@ -43,7 +43,7 @@ Our classification framework (NLP-KCT) moves beyond subjective citation intent t
 │   ├── comparison_results_summary.csv
 │   └── comparison_results.jsonl
 ├── LLM_EXP/
-│   └── llm_validation_standalone.py # LLM inference experiments (GPT-4o, Claude-3.5, Llama-3, etc.)
+│   └── llm_validation_standalone.py # LLM inference experiments (GPTmini-5.1, Claude-4.5, Gemini-2.5, etc.)
 └── README.md
 ```
 
