@@ -192,11 +192,11 @@ We extend our sincere gratitude to all collaborators who contributed to this pro
 If you use this dataset or code in your research, please cite our paper:
 
 ```bibtex
-@article{quan2025knowledge,
+@article{quan2026knowledge,
     title = {Knowledge Contribution Classification in Citation Contexts: A 45-Year Empirical Study of NLP Literature},
     author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Ming Ma and Jinyu Wei and Jie Sun},
     journal = {...},
-    year = {2025},
+    year = {2026},
     publisher = {...}
 }
 ```
