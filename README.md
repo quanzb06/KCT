@@ -1,4 +1,4 @@
-# Knowledge Contribution Classification in Citation Contexts: A 45-Year Empirical Study of NLP Literature
+# From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Works Actually Contribute
 
 <p align="center">
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
@@ -16,7 +16,7 @@
 
 ---
 
-This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"Knowledge Contribution Classification in Citation Contexts: A 45-Year Empirical Study of NLP Literature"*.
+This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Works Actually Contribute"*.
 
 ---
 
@@ -28,9 +28,9 @@ To address these issues, we propose the **Knowledge Contribution Taxonomy (NLP-K
 
 ---
 
-## 🏷️ Knowledge Contribution Taxonomy (NLP-KCT)
+## 🏷️ Knowledge Contribution Taxonomy (KCT)
 
-Our classification framework (NLP-KCT) moves beyond subjective citation intent to focus on the objective, verifiable knowledge contribution of a cited paper. We define four categories, including three **Core Knowledge Contributions** and one **Non-core** contribution.
+Our classification framework (KCT) moves beyond subjective citation intent to focus on the objective, verifiable knowledge contribution of a cited paper. We define four categories, including three **Core Knowledge Contributions** and one **Non-core** contribution.
 
 | Type | Category | Definition | Example |
 | :---: | :--- | :--- | :--- |
@@ -193,8 +193,8 @@ If you use this dataset or code in your research, please cite our paper:
 
 ```bibtex
 @article{quan2026knowledge,
-    title = {Knowledge Contribution Classification in Citation Contexts: A 45-Year Empirical Study of NLP Literature},
-    author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Ming Ma and Jinyu Wei and Jie Sun},
+    title = {From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Works Actually Contribute},
+    author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Ming Ma and Jinyu Wei},
     journal = {...},
     year = {2026},
     publisher = {...}
