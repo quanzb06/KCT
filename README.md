@@ -36,7 +36,7 @@ Our classification framework (KCT) moves beyond subjective citation intent to fo
 | :---: | :--- | :--- | :--- |
 | 🔧 | **Method** (Core) | Citation where the citing paper directly uses, implements, improves, or extends methods, techniques, algorithms, models, systems, or evaluation metrics from the cited paper. | "We compute COMET scores [CITATION] separately for each domain..." |
 | 📦 | **Resource Tool** (Core) | Citation where the citing paper uses datasets, corpora, or explicitly labeled toolkits/toolboxes from the cited paper. | "We first extracted opinionated and objective texts from DeReKo corpus [CITATION]" |
-| 📈 | **Empirical Findings** (Core) | Citation providing specific, verifiable empirical findings used for comparison, justifying decisions, or stating empirical facts. | "Table 2 shows that... our parser first outperforms the state-of-the-art segmentator of [CITATION]" |
+| 📈 | **Empirical Finding** (Core) | Citation providing specific, verifiable empirical findings used for comparison, justifying decisions, or stating empirical facts. | "Table 2 shows that... our parser first outperforms the state-of-the-art segmentator of [CITATION]" |
 | 📖 | **Research Background** (Non-core) | Citation providing necessary context by outlining development or describing research landscape. Descriptive rather than operational. | "Contemporary MT evaluation measures have evolved beyond simple lexical matching... [CITATION1], [CITATION2]" |
 
 ---
