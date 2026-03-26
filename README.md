@@ -24,7 +24,7 @@ This repository provides the model code, evaluation code, and manually annotated
 
 Understanding scientific knowledge flow and evolution is essential for assessing research impact and tracing disciplinary development. However, existing citation analysis methods focus on subjective citation intent, conflating heterogeneous knowledge types. Moreover, most studies analyze isolated contribution statements rather than actual citation contexts, yielding results disconnected from real knowledge dissemination scenarios.
 
-To address these issues, we propose the **Knowledge Contribution Taxonomy (NLP-KCT)**. This framework identifies objective knowledge contribution types of cited works across four categories: **Method**, **Resource Tool**, **Empirical Findings**, and **Background**. By distinguishing core from non-core contributions, it reveals the hierarchical structure of knowledge dissemination.
+To address these issues, we propose the **Knowledge Contribution Taxonomy (KCT)**. This framework identifies objective knowledge contribution types of cited works across four categories: **Method**, **Resource Tool**, **Empirical Findings**, and **Background**. By distinguishing core from non-core contributions, it reveals the hierarchical structure of knowledge dissemination.
 
 ---
 
@@ -44,7 +44,7 @@ Our classification framework (KCT) moves beyond subjective citation intent to fo
 ## 📁 Repository Structure
 
 ```
-📦 NLP-KCT
+📦 KCT
 ├── 📂 data/
 │   ├── 📄 train_split.csv              # Training set
 │   ├── 📄 val_split.csv                # Validation set
