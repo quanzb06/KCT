@@ -1,4 +1,4 @@
-# From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Works Actually Contribute
+# From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Papers Actually Contribute
 
 <p align="center">
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
@@ -16,7 +16,7 @@
 
 ---
 
-This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Works Actually Contribute"*.
+This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Papers Actually Contribute"*.
 
 ---
 
@@ -193,7 +193,7 @@ If you use this dataset or code in your research, please cite our paper:
 
 ```bibtex
 @article{quan2026knowledge,
-    title = {From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Works Actually Contribute},
+    title = {From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Papers Actually Contribute},
     author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Ming Ma and Jinyu Wei},
     journal = {...},
     year = {2026},
