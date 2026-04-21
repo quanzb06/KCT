@@ -118,7 +118,7 @@ Category Descriptions
 
 Category 1: Method Contribution
 Category 2: Resource Tool Contribution
-Category 3: Evidential Finding Contribution
+Category 3: Empirical Finding Contribution
 Category 4: Background Contribution
 
 You are an academic literature knowledge contribution classification expert. Please strictly follow the decision tree above to classify citations.
