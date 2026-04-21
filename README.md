@@ -1,4 +1,4 @@
-# From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Papers Actually Contribute
+# From Citation Intent to Knowledge Contribution: Classifying What Cited Papers Actually Contribute
 
 <p align="center">
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10+-blue.svg?logo=python&logoColor=white" alt="Python"></a>
@@ -16,34 +16,32 @@
 
 ---
 
-This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Papers Actually Contribute"*.
+This repository provides the model code, evaluation code, and manually annotated dataset for the paper *"From Citation Intent to Knowledge Contribution: Classifying What Cited Papers Actually Contribute"*.
 
 ---
 
 ## 📋 Overview
 
-Understanding scientific knowledge flow and evolution is essential for assessing research impact and tracing disciplinary development. However, existing citation analysis methods focus on subjective citation intent, conflating heterogeneous knowledge types. Moreover, most studies analyze isolated contribution statements rather than actual citation contexts, yielding results disconnected from real knowledge dissemination scenarios.
+Understanding how knowledge propagates and accumulates in scientific literature is essential for assessing research impact and tracing disciplinary development. However, existing citation classification methods remain anchored in the citing author's subjective intent, which cannot stably characterize what knowledge the cited paper actually contributes. Recent work on contribution identification is mostly confined to author-stated contributions in paper abstracts, disconnected from how knowledge is actually transmitted through citations.
 
-To address these issues, we propose the **Knowledge Contribution Taxonomy (KCT)**. This framework identifies objective knowledge contribution types of cited works across four categories: **Method**, **Resource Tool**, **Empirical Findings**, and **Background**. By distinguishing core from non-core contributions, it reveals the hierarchical structure of knowledge dissemination.
+To address these issues, we propose the **Knowledge Contribution Taxonomy (KCT)**. Grounded in a Scientific Research Logic Model, this framework classifies the objective knowledge contribution of cited papers into four categories: **Method**, **Resource Tool**, **Empirical Finding**, and **Background**. By distinguishing core from non-core contributions, the KCT reveals the hierarchical structure of citation relationships and supports more fine-grained research evaluation.
 
 ---
 
 ## 🏷️ Knowledge Contribution Taxonomy (KCT)
 
-Our classification framework (KCT) moves beyond subjective citation intent to focus on the objective, verifiable knowledge contribution of a cited paper. We define four categories, including three **Core Knowledge Contributions** and one **Non-core** contribution.
+Our classification framework (KCT) moves beyond subjective citation intent to focus on the objective knowledge contribution of a cited paper. We define four categories, including three **Core Knowledge Contributions** and one **Non-core** contribution.
 
 | Type | Category | Definition | Example |
 | :---: | :--- | :--- | :--- |
 | 🔧 | **Method** (Core) | Citation where the citing paper directly uses, implements, improves, or extends methods, techniques, algorithms, models, systems, or evaluation metrics from the cited paper. | "We compute COMET scores [CITATION] separately for each domain..." |
 | 📦 | **Resource Tool** (Core) | Citation where the citing paper uses datasets, corpora, or explicitly labeled toolkits/toolboxes from the cited paper. | "We first extracted opinionated and objective texts from DeReKo corpus [CITATION]" |
 | 📈 | **Empirical Finding** (Core) | Citation providing specific, verifiable empirical findings used for comparison, justifying decisions, or stating empirical facts. | "Table 2 shows that... our parser first outperforms the state-of-the-art segmentator of [CITATION]" |
-| 📖 | **Research Background** (Non-core) | Citation providing necessary context by outlining development or describing research landscape. Descriptive rather than operational. | "Contemporary MT evaluation measures have evolved beyond simple lexical matching... [CITATION1], [CITATION2]" |
+| 📖 | **Background** (Non-core) | Citation providing necessary context by outlining development or describing research landscape. Descriptive rather than operational. | "Contemporary MT evaluation measures have evolved beyond simple lexical matching... [CITATION1], [CITATION2]" |
 
 ---
 
 ## 📁 Repository Structure
-
-```
 📦 KCT
 ├── 📂 data/
 │   ├── 📄 train_split.csv              # Training set
@@ -57,7 +55,6 @@ Our classification framework (KCT) moves beyond subjective citation intent to fo
 ├── 📂 LLM_EXP/
 │   └── 🐍 llm_validation_standalone.py # LLM inference experiments
 └── 📄 README.md
-```
 
 ---
 
@@ -65,7 +62,7 @@ Our classification framework (KCT) moves beyond subjective citation intent to fo
 
 ### 🗃️ Data Source: ACL Anthology (802,202 Instances)
 
-We collected and preprocessed **802,202 citation instances** from the ACL Anthology, spanning 45 years of NLP research (1980–2024). Figure 1 shows the statistical features: exponential growth in publications (Fig. 1a), high concentration of citations in the *Introduction* (44.0%) and *Related Work* (34.3%) sections (Fig. 1b), and a normal distribution of context length (Mean: 434 chars) (Fig. 1c).
+We collected and preprocessed **802,202 citation instances** from the ACL Anthology, spanning 45 years of NLP research (1980–2024). Figure 1 shows the statistical features: exponential growth in publications (Fig. 1a), high concentration of citations in the *Introduction* (44.0%) and *Related Work* (34.3%) sections (Fig. 1b), and a right-skewed distribution of context length (Mean: 434 chars, Median: 414 chars) (Fig. 1c).
 
 <p align="center">
   <img width="2199" height="792" alt="Figure 1: Data Statistics" src="https://github.com/user-attachments/assets/003b1f19-46c3-4bc7-960e-3f9b71f0fef1" />
@@ -75,9 +72,9 @@ We collected and preprocessed **802,202 citation instances** from the ACL Anthol
 
 ### 🏆 Released Dataset: Gold Standard (2,000 Instances)
 
-From the above 802,202 instances, we performed **stratified sampling** to obtain **2,000 citation instances** for manual annotation. This gold standard dataset is released for model training, evaluation, and reproduction.
+From the above 802,202 instances, we performed **proportional stratified sampling** by temporal period to obtain **2,000 citation instances** for manual annotation. This gold standard dataset is released for model training, evaluation, and reproduction.
 
-The annotation quality was rigorously assessed, achieving an **Average Cohen's Kappa of 0.770** and a **Fleiss' Kappa of 0.770** (Fig. 2a, 2b), indicating "excellent" inter-annotator agreement.
+The annotation quality was rigorously assessed, with pairwise **Cohen's Kappa ranging from 0.715 to 0.821 (mean 0.770)** across six annotator pairs and an overall **Fleiss' Kappa of 0.77** (Fig. 2a, 2b), indicating substantial inter-annotator agreement comparable to related studies in citation analysis.
 
 <p align="center">
   <img width="1958" height="588" alt="Figure 2: Annotation Quality" src="https://github.com/user-attachments/assets/2d4ce66d-007f-4015-b56d-1280e79bc050" />
@@ -114,7 +111,7 @@ The CSV file contains 19 columns. Here is a detailed breakdown using a single ex
 | `current_sentence` | The specific sentence containing the `CITATION` marker. | `In contrast to the usual Bayesian treatment of PCFGs which places priors on global rule probabilities...` |
 | `next_sentence` | The sentence immediately following the citation sentence. | `It is therefore closely related to the Bayesian grammars studied by Cohen et al. (2009)...` |
 | `period` | The pre-defined technological era of the citation. | `Period4_2017-2020` |
-| `KC` | The Knowledge Contribution label (1=Method, 2=Resource, 3=Finding, 4=Background). | `1` |
+| `KC` | The Knowledge Contribution label (1=Method, 2=Resource Tool, 3=Empirical Finding, 4=Background). | `1` |
 
 </details>
 
@@ -131,6 +128,8 @@ pip install torch transformers scikit-learn pandas numpy requests tqdm
 ```bash
 python scibert+hybrid.py
 ```
+
+The dual-path hybrid fusion model based on SciBERT achieves **85.5% classification accuracy**, outperforming mainstream LLMs on the same test set.
 
 ### 📊 Run Baseline Comparisons
 ```bash
@@ -193,7 +192,7 @@ If you use this dataset or code in your research, please cite our paper:
 
 ```bibtex
 @article{quan2026knowledge,
-    title = {From Citation Intent to Knowledge Contribution: Identifying and Evaluating What Cited Papers Actually Contribute},
+    title = {From Citation Intent to Knowledge Contribution: Classifying What Cited Papers Actually Contribute},
     author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Ming Ma and Jinyu Wei},
     journal = {...},
     year = {2026},
