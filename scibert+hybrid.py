@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-"""
-Standalone SciBERT+Hybrid training script extracted from the ablation pipeline.
-Runs the baseline configuration (prev/current/citing_title/cited_abstract) across
-predefined seeds and stores results inside `开源代码01/SCIBERT+HYBRID`.
-"""
 
 from __future__ import annotations
 
