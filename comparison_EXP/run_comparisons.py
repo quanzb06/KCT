@@ -1,17 +1,4 @@
-#!/usr/bin/env python3
-"""Rerun comparison baselines with the ablation combo configuration.
 
-The script mirrors the training recipe used in
-``run_combo_prev_current_repeats.py``:
-    - dataset: /home/quanzb23/JASIST/exp1010/scibert7.5:1:1.5/data75:1:15
-    - features: prev/current/citing_title/cited_abstract (hybrid fusion)
-    - training: SciBERT-style fusion encoder, Focal loss (gamma 1.3),
-      epochs=15, patience=3, batch size=8, warmup ratio=0.1
-
-Each selected model is evaluated with seeds 42-46. Results are appended to
-``comparison_results.jsonl`` so the process can resume safely after an
-interruption.
-"""
 
 from __future__ import annotations
 
