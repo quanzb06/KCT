@@ -42,6 +42,8 @@ Our classification framework (KCT) moves beyond subjective citation intent to fo
 ---
 
 ## 📁 Repository Structure
+
+```
 📦 KCT
 ├── 📂 data/
 │   ├── 📄 train_split.csv              # Training set
@@ -55,6 +57,7 @@ Our classification framework (KCT) moves beyond subjective citation intent to fo
 ├── 📂 LLM_EXP/
 │   └── 🐍 llm_validation_standalone.py # LLM inference experiments
 └── 📄 README.md
+```
 
 ---
 
@@ -193,7 +196,7 @@ If you use this dataset or code in your research, please cite our paper:
 ```bibtex
 @article{quan2026knowledge,
     title = {From Citation Intent to Knowledge Contribution: Classifying What Cited Papers Actually Contribute},
-    author = {Zhibang Quan and Jin Mao and Gang Li and Zhentao Liang and Ming Ma and Jinyu Wei},
+    author = {Zhibang Quan and Zhentao Liang and Ming Ma and Jinyu Wei and Gang Li and Jin Mao},
     journal = {...},
     year = {2026},
     publisher = {...}
