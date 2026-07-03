@@ -185,8 +185,9 @@ python llm_validation_standalone.py \
 
 ## 🙏 Acknowledgments
 
-We extend our sincere gratitude to all collaborators who contributed to this project. From data collection and preprocessing to the meticulous annotation of 2,000 citation instances, their dedication and effort were indispensable. The painstaking work of our annotators in carefully labeling each citation context forms the foundation upon which this research is built. We also thank anonymous reviewers for suggestions that helped improving the paper.
+We extend our sincere gratitude to all collaborators who contributed to this project. From data collection and preprocessing to the meticulous annotation of 2,000 citation instances, their dedication and effort were indispensable. The painstaking work of our annotators in carefully labeling each citation context forms the foundation upon which this research is built.
 
+We are deeply grateful to the editors for their careful handling of our manuscript and to the anonymous reviewers for their constructive and insightful comments. Their thoughtful suggestions substantially improved the quality, clarity, and rigor of this work.
 ---
 
 ## 📝 Citation
