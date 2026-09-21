@@ -200,9 +200,9 @@ If you use this dataset or code in your research, please cite our paper:
 @article{quan2026knowledge,
     title = {From Citation Intent to Knowledge Contribution: Classifying What Cited Papers Actually Contribute},
     author = {Zhibang Quan and Zhentao Liang and Ming Ma and Jinyu Wei and Gang Li and Jin Mao},
-    journal = {...},
+    journal = {Journal of the Association for Information Science and Technology},
     year = {2026},
-    publisher = {...}
+    publisher = {Wiley}
 }
 ```
 
